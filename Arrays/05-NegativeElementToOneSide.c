@@ -1,5 +1,5 @@
 // Negative Elements to One Side using Double Pointer
-// Time Complexity: 
+// Time Complexity: O(n)
 
 #include <stdio.h>
 #include <stdlib.h>
