@@ -1,12 +1,11 @@
-// Finding the Kth Smallest ELement in an Array
+// Sort the given values containing either 0,1 or 2 in ascending order
 // Time Complexity: O(n^2)
 
 #include <stdio.h>
 #include <stdlib.h>
 
-// Fidning Kth Smallest Element in the Array
-int kthSmallest(int* arr, int len) {
-    // Sorting the Array
+void sort(int* arr, int len) {
+    // SORTING THE ARRAY
     for(int i=0;i<len-1;i++) {
         for(int j=0;j<len-1;j++) {
             if(arr[j]>arr[j+1]) {
@@ -16,31 +15,32 @@ int kthSmallest(int* arr, int len) {
             }
         }
     }
-    // Asking for kth value
-    int k;
-    printf("Enter the kth Value: ");
-    scanf("%d",&k);
-
-    return arr[len];
 }
 
 int main() {
-    // ENTERING THE LENGTH OF ARRAY
+
+    // STORING THE LENGTH OF ARRAY
     int len;
     printf("Enter the length of the array: ");
     scanf("%d", &len);
 
-    // Dynamically Allocating Memory to the Array
+    // DYNAMICALLY ALLOCATE MEMORY TO ARRAY
     int *arr = (int *)malloc(len * sizeof(int));
 
-    // Taking the Elements of the Array
+    // TAKING THE ELEMENTS OF THE ARRAY
     printf("Enter the elements of the array: \n");
     for (int i = 0; i < len; i++) {
         printf("Element %d: ", i + 1);
         scanf("%d", &arr[i]);
+        if(!(arr[i]==0 || arr[i]==1 || arr[i]==2)) {printf("Not a Valid input, Re Enter....\n");i--;}
     }
 
-    int val = kthSmallest(arr,len);
+    sort(arr,len);
 
-    printf("The Kth Smallest Value in the Array: %d\n",val);
+    // PRINTING THE OUPUT
+    printf("The elements of the array are: ");
+    for (int i = 0; i < len; i++) {
+        printf("%d ", arr[i]);
+    }
+
 }
