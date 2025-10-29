@@ -1,0 +1,7 @@
+void dequeue(int arr[], int* front) {
+    if(isEmpty(rear,front)) {
+        printf("Queue is Empty");
+        return;
+    }
+    *front++;
+}

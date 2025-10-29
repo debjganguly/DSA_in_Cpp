@@ -1,0 +1,7 @@
+void enqueue(int arr[],int* rear, int front, int val) {
+    if(isFull(rear,front)) {
+        printf("Queue is Full");
+        return;
+    }
+    arr[*rear++]=val;
+}
